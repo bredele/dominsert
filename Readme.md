@@ -13,8 +13,8 @@
 
 ### insert(child, parent[, position])
 
-	Insert adjacent child element or string into parent element.
-	`position` can be :
+Insert adjacent child element or string into parent element.
+`position` can be :
 	  - beforeend (default)
 	  - afterend
 	  - beforebegin
