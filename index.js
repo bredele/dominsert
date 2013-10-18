@@ -32,12 +32,42 @@ function adjacent(el, child, position) {
  * @api public
  */
 
-function insert(parent, child, position) {
-  if(typeof element === 'string') {
-  	parent.insertAdjacentHTML(position || 'beforeend', child);
+function insert(child, position, parent) {
+	var pos = position || 'beforeend';
+  if(typeof child === 'string') {
+    insert.html(child, pos, parent);
   } else {
-  	adjacent(parent, child, position);
+    insert.element(child, pos, parent);
   }
 }
+
+
+/**
+ * Insert adjacent HTML.
+ * Simple insertAdjacentHTML wrapper.
+ * 
+ * @param  {String} child    
+ * @param  {String} position [description]
+ * @param  {HTMLElement} parent 
+ * @api public
+ */
+
+insert.html = function(child, position, parent) {
+	parent.insertAdjacentHTML(position, child);
+};
+
+
+/**
+ * Insert adjacent HTML element.
+ * 
+ * @param  {HTMLElement} child    
+ * @param  {String} position [description]
+ * @param  {HTMLElement} parent 
+ * @api public
+ */
+
+insert.element = function(child, position, parent) {
+	adjacent(parent, child, position);
+};
 
 
