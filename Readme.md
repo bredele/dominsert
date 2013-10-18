@@ -11,7 +11,32 @@
 
 ## API
 
+### insert(child, parent[, position])
 
+	Insert adjacent child element or string into parent element.
+	`position` can be :
+	  - beforeend (default)
+	  - afterend
+	  - beforebegin
+	  - afterbegin
+
+```js
+var insert = require('insert');
+insert('<button>btn</button>', document.body);
+```
+
+### insert.html(child, parent[, position])
+
+  Insert child string
+
+
+### insert.element(child, parent[, position])
+
+  insert child HTML element.
+
+## TODO
+
+  - clean api
 
 ## License
 

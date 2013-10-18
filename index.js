@@ -6,7 +6,46 @@
 module.exports = insert;
 
 
-function adjacent(el, child, position) {
+/**
+ * insert constructor.
+ * @api public
+ */
+
+function insert(child, parent, position) {
+	var pos = position || 'beforeend';
+  if(typeof child === 'string') {
+    insert.html(child, parent, pos);
+  } else {
+    insert.element(child, parent, pos);
+  }
+}
+
+
+/**
+ * Insert adjacent HTML.
+ * Simple insertAdjacentHTML wrapper.
+ * 
+ * @param  {String} child    
+ * @param  {String} position [description]
+ * @param  {HTMLElement} parent 
+ * @api public
+ */
+
+insert.html = function(child, parent, position) {
+	parent.insertAdjacentHTML(position, child);
+};
+
+
+/**
+ * Insert adjacent HTML element.
+ * 
+ * @param  {HTMLElement} child    
+ * @param  {String} position [description]
+ * @param  {HTMLElement} parent 
+ * @api public
+ */
+
+insert.element = function(child, parent, position) {
 	if(el.insertAdjacentElement) {
 		el.insertAdjacentElement(position, child);
 	} else {
@@ -25,49 +64,6 @@ function adjacent(el, child, position) {
 				break;
 		}
 	}
-}
-
-/**
- * insert constructor.
- * @api public
- */
-
-function insert(child, position, parent) {
-	var pos = position || 'beforeend';
-  if(typeof child === 'string') {
-    insert.html(child, pos, parent);
-  } else {
-    insert.element(child, pos, parent);
-  }
-}
-
-
-/**
- * Insert adjacent HTML.
- * Simple insertAdjacentHTML wrapper.
- * 
- * @param  {String} child    
- * @param  {String} position [description]
- * @param  {HTMLElement} parent 
- * @api public
- */
-
-insert.html = function(child, position, parent) {
-	parent.insertAdjacentHTML(position, child);
-};
-
-
-/**
- * Insert adjacent HTML element.
- * 
- * @param  {HTMLElement} child    
- * @param  {String} position [description]
- * @param  {HTMLElement} parent 
- * @api public
- */
-
-insert.element = function(child, position, parent) {
-	adjacent(parent, child, position);
 };
 
 
