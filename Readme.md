@@ -15,10 +15,10 @@
 
 Insert adjacent child element or string into parent element.
 `position` can be :
-	  - beforeend (default)
-	  - afterend
-	  - beforebegin
-	  - afterbegin
+  - beforeend (default)
+  - afterend
+  - beforebegin
+  - afterbegin
 
 ```js
 var insert = require('insert');
