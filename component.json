@@ -1,0 +1,14 @@
+{
+  "name": "insert",
+  "repo": "bredele/insert",
+  "description": "cross-browser insert adjacent html/element",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
