@@ -14,19 +14,19 @@ module.exports = insert;
  *
  *   insert('<span>hello</span>', el);
  *   insert(btn, el, 'beforebegin');
- *
- * @param  {String} child    
+ *   
  * @param  {HTMLElement} parent 
+ * @param  {String} child    
  * @param  {String} position
  * @api public
  */
 
-function insert(child, parent, position) {
+function insert(parent, child, position) {
   var pos = position || 'beforeend';
   if(typeof child === 'string') {
-    insert.html(child, parent, pos);
+    insert.html(parent, child, pos);
   } else {
-    insert.element(child, parent, pos);
+    insert.element(parent, child, pos);
   }
 }
 
@@ -35,13 +35,13 @@ function insert(child, parent, position) {
  * Insert adjacent HTML.
  * Simple insertAdjacentHTML wrapper.
  * 
+ * @param  {HTMLElement} parent 
  * @param  {String} child    
  * @param  {String} position [description]
- * @param  {HTMLElement} parent 
  * @api public
  */
 
-insert.html = function(child, parent, position) {
+insert.html = function(parent, child, position) {
   parent.insertAdjacentHTML(position, child);
 };
 
@@ -49,13 +49,13 @@ insert.html = function(child, parent, position) {
 /**
  * Insert adjacent HTML element.
  * 
+ * @param  {HTMLElement} parent 
  * @param  {HTMLElement} child    
  * @param  {String} position [description]
- * @param  {HTMLElement} parent 
  * @api public
  */
 
-insert.element = function(child, parent, position) {
+insert.element = function(parent, child, position) {
   if(parent.insertAdjacentElement) {
     parent.insertAdjacentElement(position, child);
   } else {

@@ -11,7 +11,7 @@
 
 ## API
 
-### insert(child, parent[, position])
+### insert(parent, child[, position])
 
   Insert a node into the DOM tree at a specified position:
   - beforeend (default)
@@ -22,25 +22,25 @@
 
 ```js
 var insert = require('insert');
-insert('<button>btn</button>', document.body);
+insert(document.body, '<button>btn</button>');
 ```
 
-### insert.html(child, parent[, position])
+### insert.html(parent, child[, position])
 
   Insert child string
 
 ```js
-insert('<button>btn</button>', document.body, 'beforebegin');
+insert(document.body, '<button>btn</button>', 'beforebegin');
 ```
 
   `insert` avoids the extra step of serialization which make it much faster than direct innerHTML manipulation.
 
-### insert.element(child, parent[, position])
+### insert.element(parent, child[, position])
 
   insert child HTML element.
 
 ```js
-insert(btn, document.body);
+insert(document.body, btn);
 ```
 
 ## License

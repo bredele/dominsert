@@ -11,12 +11,12 @@
 	  var insert = require('insert');
 	  var anchor = document.querySelector('div');
 
-	  insert('<button>Hello!</button>', anchor);
+	  insert(anchor, '<button>Hello!</button>');
 
 	  var world = document.createElement('button');
 	  world.innerHTML = 'World!';
 
-	  insert(world, anchor);
+	  insert(anchor, world);
 	</script>
 </body>
 </html>
