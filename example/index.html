@@ -9,7 +9,14 @@
 	<script src="../build/build.js"></script>
 	<script>
 	  var insert = require('insert');
-	  insert('<button>btn</button>', 'beforend', document.querySelector('div'));
+	  var anchor = document.querySelector('div');
+
+	  insert('<button>Hello!</button>', anchor);
+
+	  var world = document.createElement('button');
+	  world.innerHTML = 'World!';
+
+	  insert(world, anchor);
 	</script>
 </body>
 </html>

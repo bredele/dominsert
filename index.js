@@ -7,12 +7,22 @@ module.exports = insert;
 
 
 /**
- * insert constructor.
+ * Insert a node into the DOM tree 
+ * at a specified position.
+ * 
+ * Examples:
+ *
+ *   insert('<span>hello</span>', el);
+ *   insert(btn, el, 'beforebegin');
+ *
+ * @param  {String} child    
+ * @param  {HTMLElement} parent 
+ * @param  {String} position
  * @api public
  */
 
 function insert(child, parent, position) {
-	var pos = position || 'beforeend';
+  var pos = position || 'beforeend';
   if(typeof child === 'string') {
     insert.html(child, parent, pos);
   } else {
@@ -32,7 +42,7 @@ function insert(child, parent, position) {
  */
 
 insert.html = function(child, parent, position) {
-	parent.insertAdjacentHTML(position, child);
+  parent.insertAdjacentHTML(position, child);
 };
 
 
@@ -46,24 +56,24 @@ insert.html = function(child, parent, position) {
  */
 
 insert.element = function(child, parent, position) {
-	if(el.insertAdjacentElement) {
-		el.insertAdjacentElement(position, child);
-	} else {
-		switch (position) {
-			case "beforebegin":
-				el.parentNode.insertBefore(child, el);
-				break;
-			case "afterbegin":
-				el.insertBefore(child, el.firstChild);
-				break;
-			case "beforeend":
-				el.appendChild(child);
-				break;
-			case "afterend":
-				el.parentNode.insertBefore(child, el.nextSibling);
-				break;
-		}
-	}
+  if(parent.insertAdjacentElement) {
+    parent.insertAdjacentElement(position, child);
+  } else {
+    switch (position) {
+      case "beforebegin":
+        parent.parentNode.insertBefore(child, parent);
+        break;
+      case "afterbegin":
+        parent.insertBefore(child, parent.firstChild);
+        break;
+      case "beforeend":
+        parent.appendChild(child);
+        break;
+      case "afterend":
+        parent.parentNode.insertBefore(child, parent.nextSibling);
+        break;
+    }
+  }
 };
 
 

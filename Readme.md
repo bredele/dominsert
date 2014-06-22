@@ -13,12 +13,12 @@
 
 ### insert(child, parent[, position])
 
-Insert adjacent child element or string into parent element.
-`position` can be :
+  Insert a node into the DOM tree at a specified position:
   - beforeend (default)
   - afterend
   - beforebegin
   - afterbegin
+
 
 ```js
 var insert = require('insert');
@@ -29,10 +29,19 @@ insert('<button>btn</button>', document.body);
 
   Insert child string
 
+```js
+insert('<button>btn</button>', document.body, 'beforebegin');
+```
+
+  `insert` avoids the extra step of serialization which make it much faster than direct innerHTML manipulation.
 
 ### insert.element(child, parent[, position])
 
   insert child HTML element.
+
+```js
+insert(btn, document.body);
+```
 
 ## TODO
 
