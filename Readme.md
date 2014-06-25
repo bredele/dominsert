@@ -11,7 +11,7 @@
 
   Install with [nodejs](http://nodejs.org):
 
-    $ component install bredele/dominsert
+    $ npm install dominsert
 
 ## API
 
