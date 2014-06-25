@@ -1,8 +1,8 @@
 {
-  "name": "insert",
-  "repo": "bredele/insert",
+  "name": "dominsert",
+  "repo": "bredele/dominsert",
   "description": "cross-browser insert adjacent html/element",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": [],
   "dependencies": {},
   "development": {},

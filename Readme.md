@@ -1,13 +1,17 @@
 
-# insert
+# dominsert
 
   cross-browser insert adjacent html/element
 
 ## Installation
 
-  Install with [component(1)](http://component.io):
+  Install with [component](http://component.io):
 
-    $ component install bredele/insert
+    $ component install bredele/dominsert
+
+  Install with [nodejs](http://nodejs.org):
+
+    $ component install bredele/dominsert
 
 ## API
 
@@ -21,7 +25,7 @@
 
 
 ```js
-var insert = require('insert');
+var insert = require('dominsert');
 insert(document.body, '<button>btn</button>');
 ```
 

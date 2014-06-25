@@ -1,9 +1,9 @@
 
 /**
- * Expose 'insert'
+ * Expose 'dominsert'
  */
 
-module.exports = insert;
+module.exports = dominsert;
 
 
 /**
@@ -12,8 +12,8 @@ module.exports = insert;
  * 
  * Examples:
  *
- *   insert('<span>hello</span>', el);
- *   insert(btn, el, 'beforebegin');
+ *   dominsert('<span>hello</span>', el);
+ *   dominsert(btn, el, 'beforebegin');
  *   
  * @param  {HTMLElement} parent 
  * @param  {String} child    
@@ -21,12 +21,12 @@ module.exports = insert;
  * @api public
  */
 
-function insert(parent, child, position) {
+function dominsert(parent, child, position) {
   var pos = position || 'beforeend';
   if(typeof child === 'string') {
-    insert.html(parent, child, pos);
+    dominsert.html(parent, child, pos);
   } else {
-    insert.element(parent, child, pos);
+    dominsert.element(parent, child, pos);
   }
 }
 
@@ -41,7 +41,7 @@ function insert(parent, child, position) {
  * @api public
  */
 
-insert.html = function(parent, child, position) {
+dominsert.html = function(parent, child, position) {
   parent.insertAdjacentHTML(position, child);
 };
 
@@ -55,7 +55,7 @@ insert.html = function(parent, child, position) {
  * @api public
  */
 
-insert.element = function(parent, child, position) {
+dominsert.element = function(parent, child, position) {
   if(parent.insertAdjacentElement) {
     parent.insertAdjacentElement(position, child);
   } else {
